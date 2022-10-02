@@ -32,10 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PEPExtensions">
-      <HintPath>..\..\..\PEPExtensions\PEPExtensions\bin\Release\PEPExtensions.dll</HintPath>
+      <HintPath>..\..\PEPExtensions\PEPExtensions\bin\Release\PEPExtensions.dll</HintPath>
     </Reference>
     <Reference Include="PEPlugin">
-      <HintPath>..\..\..\..\PmxEditor\Lib\PEPlugin\PEPlugin.dll</HintPath>
+      <HintPath>..\..\..\PmxEditor\Lib\PEPlugin\PEPlugin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
