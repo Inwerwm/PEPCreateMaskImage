@@ -12,7 +12,7 @@ namespace CreateMaskImage
     {
         private bool disposedValue;
 
-        public string Name => "CreateMaskImage";
+        public string Name => "マスク画像を作成";
 
         public string Version => "1.0";
 
