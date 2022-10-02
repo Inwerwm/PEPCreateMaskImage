@@ -18,9 +18,12 @@ namespace CreateMaskImage
         IPERunArgs Args { get; }
         IPXPmx Pmx { get; set; }
 
+        MaskMaker MaskMaker { get; }
+
         public FormControl(IPERunArgs args)
         {
             Args = args;
+            MaskMaker = new MaskMaker();
 
             InitializeComponent();
             Reload();

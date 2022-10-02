@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MaskMaker.cs" />
     <Compile Include="PluginMain.cs" />
     <Compile Include="FormControl.cs">
       <SubType>Form</SubType>
