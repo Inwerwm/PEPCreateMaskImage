@@ -16,6 +16,7 @@ namespace CreateMaskImage
     public partial class FormControl : Form
     {
         IPERunArgs Args { get; }
+        IPXPmx Pmx { get; set; }
 
         public FormControl(IPERunArgs args)
         {
@@ -27,7 +28,10 @@ namespace CreateMaskImage
 
         internal void Reload()
         {
-            // TODO: プラグインの再読み込み処理を記述します。
+            Pmx = Args.Host.Connector.Pmx.GetCurrentState();
+
+            listBoxMaterials.Items.Clear();
+            listBoxMaterials.Items.AddRange(Pmx.Material.ToArray());
         }
 
         private void FormControl_FormClosing(object sender, FormClosingEventArgs e)
