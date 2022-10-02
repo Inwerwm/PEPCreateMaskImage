@@ -248,6 +248,7 @@ namespace CreateMaskImage
             this.buttonExecute.TabIndex = 2;
             this.buttonExecute.Text = "作成";
             this.buttonExecute.UseVisualStyleBackColor = true;
+            this.buttonExecute.Click += new System.EventHandler(this.buttonExecute_Click);
             // 
             // FormControl
             // 

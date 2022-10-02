@@ -41,5 +41,26 @@ namespace CreateMaskImage
         {
             Reload();
         }
+
+        private void buttonExecute_Click(object sender, EventArgs e)
+        {
+            var sfd = new SaveFileDialog()
+            {
+                Filter = "PNGファイル(*.png)|*.png",
+            };
+
+            if(sfd.ShowDialog() == DialogResult.OK)
+            {
+                using(var mask = MaskMaker.DrawMask(
+                    listBoxMaterials.SelectedItem as IPXMaterial,
+                    (float)numericGradientStartPosition.Value,
+                    (float)numericGradientEndPosition.Value,
+                    panelBaseColor.BackColor,
+                    panelMaskColor.BackColor))
+                {
+                    mask.Save(sfd.FileName);
+                }
+            }
+        }
     }
 }
