@@ -31,18 +31,18 @@ namespace CreateMaskImage
         {
             this.listBoxMaterials = new System.Windows.Forms.ListBox();
             this.ContentsArea = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonReload = new System.Windows.Forms.Button();
             this.panelSettings = new System.Windows.Forms.Panel();
             this.tableLayoutColor = new System.Windows.Forms.TableLayoutPanel();
+            this.panelMaskColor = new System.Windows.Forms.Panel();
+            this.labelMaskColor = new System.Windows.Forms.Label();
             this.labelBaseColor = new System.Windows.Forms.Label();
+            this.panelBaseColor = new System.Windows.Forms.Panel();
             this.labelGradientEndPosition = new System.Windows.Forms.Label();
             this.numericGradientEndPosition = new System.Windows.Forms.NumericUpDown();
             this.labelGradientStartPosition = new System.Windows.Forms.Label();
             this.numericGradientStartPosition = new System.Windows.Forms.NumericUpDown();
-            this.panelBaseColor = new System.Windows.Forms.Panel();
-            this.labelMaskColor = new System.Windows.Forms.Label();
-            this.panelMaskColor = new System.Windows.Forms.Panel();
             this.buttonExecute = new System.Windows.Forms.Button();
-            this.buttonReload = new System.Windows.Forms.Button();
             this.ContentsArea.SuspendLayout();
             this.panelSettings.SuspendLayout();
             this.tableLayoutColor.SuspendLayout();
@@ -52,14 +52,17 @@ namespace CreateMaskImage
             // 
             // listBoxMaterials
             // 
+            this.listBoxMaterials.DisplayMember = "Name";
             this.listBoxMaterials.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBoxMaterials.FormattingEnabled = true;
             this.listBoxMaterials.ItemHeight = 15;
             this.listBoxMaterials.Location = new System.Drawing.Point(4, 4);
             this.listBoxMaterials.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxMaterials.Name = "listBoxMaterials";
+            this.listBoxMaterials.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listBoxMaterials.Size = new System.Drawing.Size(236, 331);
             this.listBoxMaterials.TabIndex = 0;
+            this.listBoxMaterials.ValueMember = "Name";
             // 
             // ContentsArea
             // 
@@ -79,6 +82,17 @@ namespace CreateMaskImage
             this.ContentsArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.ContentsArea.Size = new System.Drawing.Size(489, 389);
             this.ContentsArea.TabIndex = 1;
+            // 
+            // buttonReload
+            // 
+            this.buttonReload.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonReload.Font = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonReload.Location = new System.Drawing.Point(3, 342);
+            this.buttonReload.Name = "buttonReload";
+            this.buttonReload.Size = new System.Drawing.Size(238, 44);
+            this.buttonReload.TabIndex = 3;
+            this.buttonReload.Text = "再読込";
+            this.buttonReload.UseVisualStyleBackColor = true;
             // 
             // panelSettings
             // 
@@ -113,6 +127,25 @@ namespace CreateMaskImage
             this.tableLayoutColor.Size = new System.Drawing.Size(230, 139);
             this.tableLayoutColor.TabIndex = 5;
             // 
+            // panelMaskColor
+            // 
+            this.panelMaskColor.BackColor = System.Drawing.Color.Black;
+            this.panelMaskColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMaskColor.Location = new System.Drawing.Point(120, 25);
+            this.panelMaskColor.Margin = new System.Windows.Forms.Padding(5);
+            this.panelMaskColor.Name = "panelMaskColor";
+            this.panelMaskColor.Size = new System.Drawing.Size(105, 109);
+            this.panelMaskColor.TabIndex = 7;
+            // 
+            // labelMaskColor
+            // 
+            this.labelMaskColor.AutoSize = true;
+            this.labelMaskColor.Location = new System.Drawing.Point(118, 0);
+            this.labelMaskColor.Name = "labelMaskColor";
+            this.labelMaskColor.Size = new System.Drawing.Size(46, 15);
+            this.labelMaskColor.TabIndex = 6;
+            this.labelMaskColor.Text = "マスク色";
+            // 
             // labelBaseColor
             // 
             this.labelBaseColor.AutoSize = true;
@@ -121,6 +154,16 @@ namespace CreateMaskImage
             this.labelBaseColor.Size = new System.Drawing.Size(43, 15);
             this.labelBaseColor.TabIndex = 4;
             this.labelBaseColor.Text = "基本色";
+            // 
+            // panelBaseColor
+            // 
+            this.panelBaseColor.BackColor = System.Drawing.Color.White;
+            this.panelBaseColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBaseColor.Location = new System.Drawing.Point(5, 25);
+            this.panelBaseColor.Margin = new System.Windows.Forms.Padding(5);
+            this.panelBaseColor.Name = "panelBaseColor";
+            this.panelBaseColor.Size = new System.Drawing.Size(105, 109);
+            this.panelBaseColor.TabIndex = 5;
             // 
             // labelGradientEndPosition
             // 
@@ -194,35 +237,6 @@ namespace CreateMaskImage
             this.numericGradientStartPosition.Size = new System.Drawing.Size(230, 23);
             this.numericGradientStartPosition.TabIndex = 0;
             // 
-            // panelBaseColor
-            // 
-            this.panelBaseColor.BackColor = System.Drawing.Color.White;
-            this.panelBaseColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBaseColor.Location = new System.Drawing.Point(5, 25);
-            this.panelBaseColor.Margin = new System.Windows.Forms.Padding(5);
-            this.panelBaseColor.Name = "panelBaseColor";
-            this.panelBaseColor.Size = new System.Drawing.Size(105, 109);
-            this.panelBaseColor.TabIndex = 5;
-            // 
-            // labelMaskColor
-            // 
-            this.labelMaskColor.AutoSize = true;
-            this.labelMaskColor.Location = new System.Drawing.Point(118, 0);
-            this.labelMaskColor.Name = "labelMaskColor";
-            this.labelMaskColor.Size = new System.Drawing.Size(46, 15);
-            this.labelMaskColor.TabIndex = 6;
-            this.labelMaskColor.Text = "マスク色";
-            // 
-            // panelMaskColor
-            // 
-            this.panelMaskColor.BackColor = System.Drawing.Color.Black;
-            this.panelMaskColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMaskColor.Location = new System.Drawing.Point(120, 25);
-            this.panelMaskColor.Margin = new System.Windows.Forms.Padding(5);
-            this.panelMaskColor.Name = "panelMaskColor";
-            this.panelMaskColor.Size = new System.Drawing.Size(105, 109);
-            this.panelMaskColor.TabIndex = 7;
-            // 
             // buttonExecute
             // 
             this.buttonExecute.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -233,17 +247,6 @@ namespace CreateMaskImage
             this.buttonExecute.TabIndex = 2;
             this.buttonExecute.Text = "作成";
             this.buttonExecute.UseVisualStyleBackColor = true;
-            // 
-            // buttonReload
-            // 
-            this.buttonReload.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonReload.Font = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonReload.Location = new System.Drawing.Point(3, 342);
-            this.buttonReload.Name = "buttonReload";
-            this.buttonReload.Size = new System.Drawing.Size(238, 44);
-            this.buttonReload.TabIndex = 3;
-            this.buttonReload.Text = "再読込";
-            this.buttonReload.UseVisualStyleBackColor = true;
             // 
             // FormControl
             // 
