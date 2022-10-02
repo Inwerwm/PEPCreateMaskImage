@@ -93,6 +93,7 @@ namespace CreateMaskImage
             this.buttonReload.TabIndex = 3;
             this.buttonReload.Text = "再読込";
             this.buttonReload.UseVisualStyleBackColor = true;
+            this.buttonReload.Click += new System.EventHandler(this.buttonReload_Click);
             // 
             // panelSettings
             // 

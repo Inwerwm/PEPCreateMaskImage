@@ -39,5 +39,10 @@ namespace CreateMaskImage
             e.Cancel = true;
             Hide();
         }
+
+        private void buttonReload_Click(object sender, EventArgs e)
+        {
+            Reload();
+        }
     }
 }
