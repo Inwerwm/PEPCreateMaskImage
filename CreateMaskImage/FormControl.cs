@@ -1,9 +1,13 @@
 ﻿using PEPExtensions;
 using PEPlugin;
 using PEPlugin.Pmx;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
 using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Color = System.Drawing.Color;
 
 namespace CreateMaskImage
 {
@@ -55,10 +59,10 @@ namespace CreateMaskImage
                     listBoxMaterials.SelectedItem as IPXMaterial,
                     (float)numericGradientStartPosition.Value,
                     (float)numericGradientEndPosition.Value,
-                    panelBaseColor.BackColor,
-                    panelMaskColor.BackColor))
+                    Convert(panelBaseColor.BackColor),
+                    Convert(panelMaskColor.BackColor)))
                 {
-                    mask.Save(sfd.FileName);
+                    mask.SaveAsPng(sfd.FileName);
                 }
             }
         }
@@ -78,5 +82,7 @@ namespace CreateMaskImage
                 panel.BackColor = cd.Color;
             }
         }
+
+        private Rgba32 Convert(Color color) => new Rgba32(color.R, color.G, color.B);
     }
 }
