@@ -62,5 +62,21 @@ namespace CreateMaskImage
                 }
             }
         }
+
+        private void SelectPanelColor(object sender, EventArgs e)
+        {
+            var panel = (sender as Panel);
+            if(panel is null) { return; }
+
+            var cd = new ColorDialog()
+            {
+                Color = panel.BackColor
+            };
+
+            if(cd.ShowDialog() == DialogResult.OK)
+            {
+                panel.BackColor = cd.Color;
+            }
+        }
     }
 }

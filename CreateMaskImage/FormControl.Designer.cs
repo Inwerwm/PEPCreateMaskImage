@@ -137,6 +137,7 @@ namespace CreateMaskImage
             this.panelMaskColor.Name = "panelMaskColor";
             this.panelMaskColor.Size = new System.Drawing.Size(105, 109);
             this.panelMaskColor.TabIndex = 7;
+            this.panelMaskColor.Click += new System.EventHandler(this.SelectPanelColor);
             // 
             // labelMaskColor
             // 
@@ -165,6 +166,7 @@ namespace CreateMaskImage
             this.panelBaseColor.Name = "panelBaseColor";
             this.panelBaseColor.Size = new System.Drawing.Size(105, 109);
             this.panelBaseColor.TabIndex = 5;
+            this.panelBaseColor.Click += new System.EventHandler(this.SelectPanelColor);
             // 
             // labelGradientEndPosition
             // 
